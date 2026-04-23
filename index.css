@@ -1,1 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
 
+#map {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.country-btn {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.country-btn:hover {
+  background-color: #45a049;
+}
+
+#fact-display {
+  margin-bottom: 20px;
+}
+
+#fact-list {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 300px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+#translate-btn, #save-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#translate-btn:hover, #save-btn:hover {
+  background-color: #0b7dda;
+}
