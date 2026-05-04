@@ -3,24 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>World Fun Facts</title>
+    <title>World Fun Facts - Ysabelle Ramirez</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>World Fun Facts</h1>
-    <div id="map">
-      <!-- Buttons for countries will be added here -->
-    </div>
-    <div id="fact-display">
-      <h2>Fun Fact</h2>
-      <p id="fact-text">Click on a country to get a fun fact!</p>
-      <button id="translate-btn">Translate to English</button>
-      <button id="save-btn">Save Fact</button>
-    </div>
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">🌍</span>
+          <span class="logo-text">World Fun Facts</span>
+        </div>
+        <div class="author-info">
+          <span class="author-name">Ysabelle Ramirez</span>
+          <a href="https://github.com/yzybelle" target="_blank" class="github-link">
+            <span class="github-icon">🐙</span>
+            yzybelle
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div id="map">
+        <!-- Buttons for countries will be added here -->
+      </div>
+
+      <div id="fact-display">
+        <h2>Fun Fact</h2>
+        <p id="fact-text">Click on a country to get a fun fact!</p>
+        <div class="button-group">
+          <button id="translate-btn" class="btn btn-secondary">Translate to English</button>
+          <button id="save-btn" class="btn btn-primary">Save Fact</button>
+        </div>
+      </div>
+    </main>
+
     <div id="fact-list">
       <h2>Saved Facts</h2>
       <ul id="facts-ul"></ul>
     </div>
+
     <script src="index.js"></script>
   </body>
 </html>
