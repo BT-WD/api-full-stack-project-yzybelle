@@ -1,8 +1,6 @@
-// API configuration
 const API_HOST = 'world-fun-facts-all-languages-support.p.rapidapi.com';
-const API_KEY = 'ce757d623cmsh91a7607ae3ec29ap12692ejsn79c54c0caf85'; // Replace with your actual RapidAPI key
+const API_KEY = 'ce757d623cmsh91a7607ae3ec29ap12692ejsn79c54c0caf85';
 
-// Countries with their language codes, latitude, and longitude
 const countries = [
   { name: 'USA', lang: 'en', lat: 40, lon: -100 },
   { name: 'Brazil', lang: 'pt', lat: -15, lon: -55 },
@@ -15,28 +13,23 @@ const countries = [
   { name: 'South Africa', lang: 'en', lat: -30, lon: 25 },
 ];
 
-// DOM elements
 const mapDiv = document.getElementById('map');
 const factText = document.getElementById('fact-text');
 const translateBtn = document.getElementById('translate-btn');
 const saveBtn = document.getElementById('save-btn');
 const factsUl = document.getElementById('facts-ul');
 
-// Current fact
 let currentFact = '';
-
-// Load saved facts from localStorage
 let savedFacts = JSON.parse(localStorage.getItem('savedFacts')) || [];
+
 displaySavedFacts();
 
-// Create country buttons
 countries.forEach(country => {
   const btn = document.createElement('button');
   btn.className = 'country-btn';
   btn.textContent = country.name;
   btn.addEventListener('click', () => getFact(country.lang));
 
-  // Position the button on the map
   const mapWidth = 1000;
   const mapHeight = 500;
   const left = ((country.lon + 180) / 360) * mapWidth;
@@ -48,7 +41,6 @@ countries.forEach(country => {
   mapDiv.appendChild(btn);
 });
 
-// Fetch fact from API
 async function getFact(lang) {
   try {
     const response = await fetch(`https://${API_HOST}/fact.php?lang=${lang}`, {
@@ -73,7 +65,6 @@ async function getFact(lang) {
   }
 }
 
-// Translate button
 translateBtn.addEventListener('click', () => {
   if (currentFact) {
     const encodedFact = encodeURIComponent(currentFact);
@@ -81,7 +72,6 @@ translateBtn.addEventListener('click', () => {
   }
 });
 
-// Save fact
 saveBtn.addEventListener('click', () => {
   if (currentFact && !savedFacts.includes(currentFact)) {
     savedFacts.push(currentFact);
@@ -90,7 +80,6 @@ saveBtn.addEventListener('click', () => {
   }
 });
 
-// Display saved facts
 function displaySavedFacts() {
   factsUl.innerHTML = '';
   savedFacts.forEach(fact => {
